@@ -2,9 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: springboot-ingress
+  namespace: student
   annotations:
      cert-manager.io/issuer: "letsencrypt-prod"  # Should match the name of your ClusterIssuer
-    acme.cert-manager.io/http01-edit-in-place: "true"
+     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   ingressClassName: nginx  #this matches the class name of your Ingress Controller
   tls:

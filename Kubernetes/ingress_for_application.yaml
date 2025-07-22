@@ -12,14 +12,14 @@ spec:
   - hosts:
     - student.ganeshpawar.one
     secretName: tls-secret
-    rules:
-    - host: student.ganeshpawar.one
-      http:
-        paths:
-          - path: /students
-            pathType: Prefix
-            backend:
-              service:
-                name: springboot
-                port:
-                  number: 8080
+  rules:
+  - host: student.ganeshpawar.one
+    http:
+      paths:
+        - path: /students
+          pathType: Prefix
+          backend:
+            service:
+              name: springboot
+              port:
+                number: 8080
